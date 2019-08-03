@@ -165,7 +165,7 @@ def user_stats(df):
         gender_count = df['Gender'].value_counts()
         print('\nThe counts of gender are:\n', gender_count)
         # TO DO: Display earliest, most recent, and most common year of birth
-        earliest_birth_year = df['Birth Year'].min()
+        earliest_birth_year = np.amin(df['Birth Year'])
         print('\nThe earliest year of birth is:\n', earliest_birth_year)
 
         recent_birth_year = df['Birth Year'].max()
