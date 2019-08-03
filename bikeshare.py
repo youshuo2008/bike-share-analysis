@@ -22,9 +22,9 @@ def get_filters():
             if city in ['chicago', 'new york city', 'washington']:
                 break
             else:
-                print('It seems like your entry for city name is invaild.. try entering: chicago \n') 
-      
-    
+                print('It seems like your entry for city name is invaild.. try entering: chicago \n')
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
             print('Please enter a month you wanted to filter by:' )
@@ -32,9 +32,9 @@ def get_filters():
             if month in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
                 break
             else:
-                 print('It seems like your entry for month is invaild.. try entering: all') 
-     
-    
+                 print('It seems like your entry for month is invaild.. try entering: all')
+
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
             print('Please enter a day of the week you wanted to filter by: \n')
@@ -43,7 +43,7 @@ def get_filters():
                   break
             else:
                   print('It seems like your entry for day is invaild.. try entering: sunday')
-                
+
     print('-'*40)
     return city, month, day
 
@@ -61,20 +61,20 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # convert the Start Time column to datetime
-    df['Start Time'] = pd.to_datetime(df['Start Time'])              
-    
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
-    df['day'] = df['Start Time'].dt.weekday_name 
-                  
+    df['day'] = df['Start Time'].dt.weekday_name
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -82,7 +82,7 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day'] == day.title()]
-                 
+
     return df
 
 
@@ -95,15 +95,15 @@ def time_stats(df):
     # TO DO: display the most common month
     common_month = df['month'].mode()[0]
     print('\nThe most common month for travel is...\n', common_month)
-    
+
     # TO DO: display the most common day of week
     common_dow = df['day'].mode()[0]
     print('\nThe most common day of the week for travel is...\n', common_dow)
-                  
+
     # TO DO: display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     common_hour = df['hour'].mode()[0]
-    print('\nThe most common start hour for travel is:\n', common_hour)              
+    print('\nThe most common start hour for travel is:\n', common_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -138,12 +138,12 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    total_time = df['Trip Duration'].sum()
-    print('\nThe total travel time is: \n', total_time)   
+    total_time = np.sum(df['Trip Duration'])
+    print('\nThe total travel time is: \n', total_time)
 
     # TO DO: display mean travel time
     mean_time = df['Trip Duration'].mean()
-    print('\nThe mean travel time is: \n', mean_time)   
+    print('\nThe mean travel time is: \n', mean_time)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -158,7 +158,7 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_types = df['User Type'].value_counts()
     print('\nThe counts of each user type are:\n', user_types)
-    
+
     # As the washington data doesn't have the 'gender' and 'Birth Year', implemented an exception.
     try:
         # TO DO: Display counts of gender
@@ -166,17 +166,17 @@ def user_stats(df):
         print('\nThe counts of gender are:\n', gender_count)
         # TO DO: Display earliest, most recent, and most common year of birth
         earliest_birth_year = df['Birth Year'].min()
-        print('\nThe earliest year of birth is:\n', earliest_birth_year)     
+        print('\nThe earliest year of birth is:\n', earliest_birth_year)
 
         recent_birth_year = df['Birth Year'].max()
         print('\nThe most recent year of birth is:\n', recent_birth_year)
 
-        common_birth_year = df['Birth Year'].mode()[0]   
+        common_birth_year = df['Birth Year'].mode()[0]
         print('\nThe most common year of birth is:\n', recent_birth_year)
     except:
         print('\nUnfortunately the city you choose doesn\'t have the gender and birth year information.')
-   
-    
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -193,8 +193,8 @@ def show_data(df):
             print(df.iloc[num_count:num_count + 5,:])
             num_count += 5
             print('\nDo you want to see more data?')
-        
-  
+
+
 def main():
     while True:
         city, month, day = get_filters()
