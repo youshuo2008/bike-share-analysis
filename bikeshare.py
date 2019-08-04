@@ -168,7 +168,7 @@ def user_stats(df):
         earliest_birth_year = np.amin(df['Birth Year'])
         print('\nThe earliest year of birth is:\n', earliest_birth_year)
 
-        recent_birth_year = df['Birth Year'].max()
+        recent_birth_year = np.amax(df['Birth Year'])
         print('\nThe most recent year of birth is:\n', recent_birth_year)
 
         common_birth_year = df['Birth Year'].mode()[0]
