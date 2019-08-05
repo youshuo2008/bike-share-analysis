@@ -180,7 +180,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# difine a funtion
 def show_data(df):
     """Displays orginal data 5 records at a time if the user is interested"""
     print('\nDo you want to see the original data? I can show you 5 records at a time.')
@@ -188,6 +188,7 @@ def show_data(df):
     while True:
         answer = input('Enter yes or no: ').lower()
         if answer != 'yes':
+            print('\nOkay, not a problem.')
             break
         else:
             print(df.iloc[num_count:num_count + 5,:])
