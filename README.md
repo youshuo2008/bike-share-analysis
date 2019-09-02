@@ -14,8 +14,8 @@ An option to display original data 5 records at a time will also be offered to t
 
 
 ### Files used
-Files used in this project were provided by Motivate as three separate csv files:
-chicago.csv, new_york_city.csv and washington.csv.
+Three csv files: chicago.csv, new_york_city.csv and washington.csv were provided by the bikeshre company: Motivate.
+Prior data cleaning was performed for these csv files.   
 
 ### Credits
 Special thanks to my Udacity teachers: Richard Kalehoff, Juno Lee, Karl Krueger, Josh Bernhard
