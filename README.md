@@ -10,7 +10,7 @@ The goal of this project is to compute descriptive statistics to gain insights o
 An interactive experience in the terminal will be provided as we run this Python script created.
 It would allow users to select the city, month and day of interest for calculating the descriptive statistics.
 Popular times of travel, most popular stations and average trip durations etc will be calculated and revealed.
-An option to display original data 5 records at a time will also be offered to the user.
+An option to display original data 5 records at a time will also be offered to the user who runs this Python script.
 
 
 ### Files used
