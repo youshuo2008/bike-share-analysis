@@ -18,5 +18,5 @@ Three csv files: chicago.csv, new_york_city.csv and washington.csv were provided
 Prior data wrangling was performed on these csv files.   
 
 ### Credits
-Special thanks to my Udacity teachers: Richard Kalehoff, Juno Lee, Karl Krueger, Josh Bernhard
+Special thanks to my Udacity teachers: Richard Kalehoff, Juno Lee, Karl Krueger, Josh Bernhard <br />
 and mentors: Oscar Mauricio F, Tagne Nguifo E and Lasantha R as well as Udacity's project reviewers.   
