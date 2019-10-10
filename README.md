@@ -7,8 +7,8 @@ Explore US Bikeshare Data with Python
 ### Project Description
 This project is part of my Udacity's Nanodegree: Programming for Data Science. <br />
 The goal of this project is to compute descriptive statistics to gain insights of bike share data of three U.S cities: Chicago, New York City, and Washington.
-An interactive experience in the terminal will be provided as we run this Python script created.
-It would allow users to select the city, month and day of interest for calculating the descriptive statistics.
+An interactive experience in the terminal will be provided as we run this Python script.
+The program would allow users to select the city, month and day of interest for calculating descriptive statistics.
 Popular times of travel, most popular stations and average trip durations etc will be calculated and revealed.
 An option to display original data is also provided.
 
